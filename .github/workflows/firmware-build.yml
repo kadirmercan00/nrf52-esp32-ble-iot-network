@@ -1,0 +1,46 @@
+name: Build & Verify Dual Firmware (nRF52 + ESP32)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-esp32-gateway:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install PlatformIO
+        run: pip install platformio
+
+      - name: Build ESP32 Gateway Firmware
+        run: |
+          cd firmware/esp32-telemetry-gateway
+          pio run
+
+  build-nrf52-node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install PlatformIO
+        run: pip install platformio
+
+      - name: Build nRF52840 Sensor Node Firmware
+        run: |
+          cd firmware/nrf52840-sensor-node
+          pio run
