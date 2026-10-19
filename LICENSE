@@ -1,21 +1,40 @@
-MIT License
+Proprietary Source-Available License (Showcase & Technical Portfolio)
+Copyright (c) 2026 Kadir Mercan (Mercan Studio). All rights reserved.
 
-Copyright (c) 2026 Kadir Mercan
+==============================================================================
+TERMS AND CONDITIONS FOR EVALUATION AND PORTFOLIO VIEWING ONLY
+==============================================================================
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. GRANT OF EVALUATION LICENSE:
+   Permission is hereby granted to any person obtaining a copy of this software,
+   firmware, and associated documentation files (the "Software"), strictly for the purpose
+   of viewing, reading, and evaluating the engineering architecture, BLE mesh stack,
+   low-power patterns, and dual-core firmware design as part of the author's
+   professional portfolio.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. RESTRICTIONS - STRICTLY PROHIBITED:
+   - Reproduction and Deployment: You may NOT compile, upload, flash, execute, 
+     or deploy this code to any hardware device or gateway in a production,
+     commercial, or operational environment.
+   - Commercial Exploitation: You may NOT use, integrate, sub-license, sell, 
+     rent, or commercially exploit any portion of this codebase or BLE networking design.
+   - Derivative Works: You may NOT modify, adapt, translate, reverse engineer, 
+     or create derivative works based on this Software.
+   - Redistribution: You may NOT redistribute, republish, mirror, or bundle 
+     this source code in any public or private repository, forum, or package manager
+     without express written consent from the copyright holder.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. INTELLECTUAL PROPERTY:
+   All proprietary rights, title, patents, and copyright in and to the Software 
+   remain exclusively with Kadir Mercan (Mercan Studio).
+
+4. NO WARRANTY:
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+   ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+   WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For licensing inquiries or commercial hardware/firmware consultations:
+Contact: https://github.com/kadirmercan00 / contact@mercanstudio.com

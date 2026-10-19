@@ -8,8 +8,7 @@
 [![Espressif ESP32](https://img.shields.io/badge/Platform-Espressif_ESP32-E7352C?logo=espressif&logoColor=white)](https://www.espressif.com/)
 [![Embedded C++](https://img.shields.io/badge/Language-C%2B%2B17-00599C?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![BLE Protocol](https://img.shields.io/badge/Protocol-BLE_5.0_%7C_16--Byte_CRC--32-brightgreen)](protocol/packet_schema.h)
-[![Cloud Protocol](https://img.shields.io/badge/Cloud-MQTT_%7C_TLS_1.2-FF9900?logo=mqtt&logoColor=white)](firmware/esp32-telemetry-gateway/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: Proprietary Showcase](https://img.shields.io/badge/License-Proprietary_Showcase-red.svg)](LICENSE)
 
 [System Architecture](docs/ARCHITECTURE.md) • [Binary Protocol Spec](protocol/packet_schema.h) • [nRF52 Node Firmware](firmware/nrf52840-sensor-node/) • [ESP32 Gateway Firmware](firmware/esp32-telemetry-gateway/) • [Python Sniffer](tools/)
 
@@ -129,6 +128,11 @@ python tools/ble_packet_sniffer.py
 ```
 
 ---
+
+## 📄 License & Terms of Evaluation
+
+This project is licensed under the **Proprietary Source-Available Showcase License** - see the [LICENSE](LICENSE) file for full details.  
+*Evaluation, code audit, and engineering review are permitted; unauthorized commercial deployment, compilation into industrial products, and reproduction are strictly prohibited.*
 
 ## 👨‍💻 Engineering Attribution
 
