@@ -4,8 +4,8 @@
  * @author Kadir Mercan (Mercan Studio)
  */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef GATEWAY_CONFIG_H
+#define GATEWAY_CONFIG_H
 
 // ==================== WI-FI SETTINGS ====================
 #define GATEWAY_WIFI_SSID           "YOUR_FACILITY_WIFI_SSID"

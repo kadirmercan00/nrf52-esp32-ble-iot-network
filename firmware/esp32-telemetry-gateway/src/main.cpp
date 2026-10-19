@@ -412,6 +412,7 @@ static bool connectMQTT(void) {
         Serial.printf("[MQTT] Connection failed, rc=%d\n", mqttClient.state());
         return false;
     }
+    return false;
 }
 
 static void deinitWiFi(void) {
