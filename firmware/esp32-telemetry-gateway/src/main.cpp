@@ -212,14 +212,13 @@ static bool scanForPeripherals(void) {
     Serial.printf("[BLE] Scan complete. Found %d advertising devices.\n", results.getCount());
 
     for (int i = 0; i < results.getCount(); i++) {
-        const NimBLEAdvertisedDevice *device = results.getDevice(i);
-        if (!device) continue;
+        NimBLEAdvertisedDevice device = results.getDevice(i);
 
-        if (device->isAdvertisingService(NimBLEUUID(SENSOR_SERVICE_UUID))) {
-            targetAddress = device->getAddress();
+        if (device.isAdvertisingService(NimBLEUUID(SENSOR_SERVICE_UUID))) {
+            targetAddress = device.getAddress();
             targetFound = true;
             Serial.printf("[BLE] Target node identified: %s [%s]\n",
-                          device->getName().c_str(),
+                          device.getName().c_str(),
                           targetAddress.toString().c_str());
             break;
         }
