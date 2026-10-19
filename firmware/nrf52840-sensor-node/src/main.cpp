@@ -280,7 +280,7 @@ void loop(void) {
     }
 
     // 2. Process Service Door / Lid Microswitch
-    bool lidCurrentlyOpen = (digitalPinToRead(PIN_LID_SWITCH) == LOW);
+    bool lidCurrentlyOpen = (digitalRead(PIN_LID_SWITCH) == LOW);
     if (lidCurrentlyOpen && !lidPrevOpenState) {
         lidOpenTimestamp = millis();
         lidPrevOpenState = true;

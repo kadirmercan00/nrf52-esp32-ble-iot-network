@@ -28,6 +28,7 @@ typedef enum {
     NODE_STATE_WARNING = 0x02,
     NODE_STATE_FAULT   = 0x03
 } NodeOperationalState_t;
+typedef NodeOperationalState_t NodeState_t;
 
 /**
  * @brief 16-Byte Compact Sensor Payload (IEEE 802.3 CRC-32 protected)
