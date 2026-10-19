@@ -30,22 +30,21 @@ This repository implements a production-grade dual-platform Wireless Sensor Netw
 ## 🏗️ System Topology & Data Flow
 
 ```mermaid
-graph LR
+flowchart LR
     subgraph Nodes ["Ultra-Low-Power Nodes (Nordic nRF52840)"]
-        N1[CR2032 Coin Cell<br/>Iq < 15 µA] -->|BLE 5.0 Non-Connectable Adv<br/>16-Byte Packed Frame| GW
-        N2[Industrial Hall Sensor<br/>Reed Switch Actuator] -->|BLE 5.0 Non-Connectable Adv<br/>16-Byte Packed Frame| GW
+        N1["CR2032 Coin Cell Node<br/>Iq under 15 µA"] -->|"BLE 5.0 Non-Connectable Adv<br/>16-Byte Packed Frame"| GW
+        N2["Industrial Hall Sensor<br/>Reed Switch Actuator"] -->|"BLE 5.0 Non-Connectable Adv<br/>16-Byte Packed Frame"| GW
     end
 
     subgraph Gateway ["Industrial Edge Gateway (ESP32)"]
-        GW[10-State Deterministic FSM]
-        GW -->|1. CRC-32 Checksum Verification| GW
-        GW -->|2. NVS Flash Event Persistence| GW
-        GW -->|3. Wi-Fi / BLE RF Coexistence TDM| GW
+        GW["10-State Deterministic FSM"]
+        P1["1. CRC-32 Checksum"] --> P2["2. NVS Flash Persistence"] --> P3["3. Wi-Fi / BLE TDM Coexistence"]
+        GW -.-> P1
     end
 
     subgraph Cloud ["Enterprise Ingestion"]
-        GW -->|MQTTS / TLS 1.2 (Port 8883)| BROKER[AWS IoT Core / MQTT Broker]
-        BROKER --> DASH[Real-Time Monitoring Portal]
+        P3 -->|"MQTTS / TLS 1.2 (Port 8883)"| BROKER["AWS IoT Core / MQTT Broker"]
+        BROKER --> DASH["Real-Time Monitoring Portal"]
     end
 ```
 

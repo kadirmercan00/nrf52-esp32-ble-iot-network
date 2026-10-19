@@ -7,24 +7,22 @@ This document outlines the dual-platform topology combining **Nordic Semiconduct
 ## 1. Network Topology
 
 ```mermaid
-graph TD
-    subgraph BatteryNodes [Ultra-Low-Power Field Nodes]
-        N1[nRF52840 Node 01<br/>CR2032 Coin Cell<br/>Iq < 15 µA] -->|BLE 5.0 Broadcast<br/>16-Byte Packed Frame| GW
-        N2[nRF52840 Node 02<br/>CR2032 Coin Cell<br/>Iq < 15 µA] -->|BLE 5.0 Broadcast<br/>16-Byte Packed Frame| GW
-        N3[nRF52840 Node 03<br/>CR2032 Coin Cell<br/>Iq < 15 µA] -->|BLE 5.0 Broadcast<br/>16-Byte Packed Frame| GW
+flowchart TD
+    subgraph BatteryNodes ["Ultra-Low-Power Field Nodes"]
+        N1["nRF52840 Node 01<br/>CR2032 Coin Cell<br/>Iq under 15 µA"] -->|"BLE 5.0 Broadcast<br/>16-Byte Packed Frame"| GW
+        N2["nRF52840 Node 02<br/>CR2032 Coin Cell<br/>Iq under 15 µA"] -->|"BLE 5.0 Broadcast<br/>16-Byte Packed Frame"| GW
+        N3["nRF52840 Node 03<br/>CR2032 Coin Cell<br/>Iq under 15 µA"] -->|"BLE 5.0 Broadcast<br/>16-Byte Packed Frame"| GW
     end
 
-    subgraph EdgeGateway [Industrial Edge Gateway]
-        GW[ESP32 Gateway Node<br/>Mains / 24V Powered<br/>FreeRTOS Dual-Core]
-        GW -->|1. NimBLE Scan & Filter| GW
-        GW -->|2. CRC-32 Frame Verification| GW
-        GW -->|3. NVS Flash Persistence| GW
-        GW -->|4. RF Time-Division Coexistence| GW
+    subgraph EdgeGateway ["Industrial Edge Gateway"]
+        GW["ESP32 Gateway Node<br/>Mains / 24V Powered<br/>FreeRTOS Dual-Core"]
+        P1["1. NimBLE Scan & Filter"] --> P2["2. CRC-32 Verification"] --> P3["3. NVS Flash Persistence"] --> P4["4. RF TDM Coexistence"]
+        GW -.-> P1
     end
 
-    subgraph CloudMQTT [Enterprise Transport]
-        GW -->|MQTTS / TLS 1.2 Port 8883| BROKER[AWS IoT Core / EMQX Broker]
-        BROKER --> DASH[Live Operations Dashboard]
+    subgraph CloudMQTT ["Enterprise Transport"]
+        P4 -->|"MQTTS / TLS 1.2 (Port 8883)"| BROKER["AWS IoT Core / EMQX Broker"]
+        BROKER --> DASH["Live Operations Dashboard"]
     end
 ```
 
